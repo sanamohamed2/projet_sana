@@ -1,0 +1,546 @@
+/* ==========================================================
+   PORTAIL ETUDIANT ULBO — FEUILLE DE STYLE REVISEE
+   Fichier : assets/css/style.css
+   Image   : assets/images/logo-ulbo.jpg
+   ========================================================== */
+
+:root {
+    --vert-ulbo: #0a7a3d;
+    --vert-fonce: #075c2e;
+    --fond-page: #f5f5f5;
+    --texte: #333333;
+    --bordure: #cccccc;
+}
+
+/* ===== BASE ET STRUCTURE ===== */
+* { box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fond-page);
+    color: var(--texte);
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 { margin: 0; }
+
+h2 {
+    margin-top: 30px;
+    color: var(--vert-ulbo);
+}
+
+/* ===== ENTETE ET LOGO ===== */
+header,
+.site-header {
+    background-color: var(--vert-ulbo);
+    color: white;
+    padding: 20px;
+}
+
+.site-header { padding: 15px 25px; }
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-ulbo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+.site-header h1 {
+    color: white;
+    font-size: 26px;
+    margin: 0;
+}
+
+/* ===== MENU DE NAVIGATION ===== */
+.menu {
+    background-color: var(--vert-ulbo);
+    margin-top: 15px;
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu a:hover,
+.menu a:focus-visible { background-color: var(--vert-fonce); }
+
+/* ===== TABLE DES NOTES ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid var(--bordure);
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--vert-ulbo);
+    color: white;
+}
+
+/* ===== FORMULAIRES ===== */
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid var(--bordure);
+    border-radius: 5px;
+    font: inherit;
+}
+
+form textarea { min-height: 100px; }
+
+button {
+    display: block;
+    margin-top: 20px;
+    background-color: var(--vert-ulbo);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+}
+
+button:hover { background-color: var(--vert-fonce); }
+button:focus-visible, .btn-notes:focus-visible, .menu a:focus-visible {
+    outline: 3px solid #183d68;
+    outline-offset: 3px;
+}
+
+/* ===== ACCUEIL : LOGO EN FILIGRANE ===== */
+.accueil-background {
+    position: relative;
+    min-height: 75vh;
+    padding: 40px 20px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+.accueil-background {
+    position: relative;
+    min-height: 75vh;
+    padding: 40px 20px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+.reclamation-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/logo-ulbo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 380px auto;
+    opacity: 0.12;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.accueil-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.accueil-content h2 {
+    color: var(--vert-ulbo);
+    font-size: 28px;
+}
+
+.accueil-content p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ===== CONNEXION : LOGO DE FOND ET FORMULAIRE ===== */
+
+.connexion-background {
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+   /* Top, Right, Bottom, Left */
+    padding: 10px 5px 5px 10px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* ===== LOGO CIRCULAIRE EN ARRIÈRE-PLAN ===== */
+
+.connexion-background::before {
+    content: "";
+    position: absolute;
+
+    /* Center the background logo */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Circular shape */
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+
+    /* ULBO logo */
+    background-image: url("../images/logo-ulbo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /* Blend with page background */
+    opacity: 0.20;
+    mix-blend-mode: multiply;
+
+    /* Behind the login form */
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+
+
+.connexion-content {
+    position: relative;
+    z-index: 1;
+
+    background-color: rgba(255, 255, 255, 0.94);
+    padding: 30px;
+    border-radius: 12px;
+
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Toujours garder le logo et le titre sur la même ligne. */
+.connexion-content .header-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.connexion-content .logo-ulbo {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+}
+
+.connexion-content .header-content h1 {
+    margin: 0;
+    color: var(--vert-ulbo);
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+#form-connexion label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#form-connexion input {
+    width: 100%;
+    max-width: none;
+    padding: 10px;
+    border: 1px solid var(--bordure);
+    border-radius: 5px;
+}
+
+#form-connexion button {
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--vert-ulbo);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#form-connexion button:hover { background-color: var(--vert-fonce); }
+
+/* ===== BOUTON « CONSULTER MES NOTES » ===== */
+.btn-notes {
+    display: inline-block;
+    background-color: var(--vert-ulbo);
+    color: white;
+    padding: 15px 30px;
+    margin-top: 25px;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-notes:hover { background-color: var(--vert-fonce); }
+
+
+
+/* ==========================================
+   INDEX.HTML — PAGE PUBLIQUE D'ACCUEIL
+   ========================================== */
+
+/* En-tête de la page index */
+.index-header {
+    background-color: var(--vert-ulbo, #0a7a3d);
+    color: white;
+    padding: 20px 35px;
+}
+
+/* Logo et nom de l'université */
+.index-header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Logo ULBO */
+.index-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+/* Nom de l'université */
+.index-university h1 {
+    color: white;
+    font-size: 26px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.index-university p {
+    font-size: 17px;
+    margin: 8px 0 0;
+    color: #e2f1e5;
+}
+
+/* Menu de navigation */
+.index-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.index-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.index-menu a:hover,
+.index-menu a:focus-visible,
+.index-menu a[aria-current="page"] {
+    background-color: var(--vert-fonce, #075c2e);
+}
+
+/* Zone principale */
+.index-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Section bienvenue */
+.index-welcome {
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.94);
+    padding: 45px 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.index-welcome h2 {
+    color: var(--vert-ulbo, #0a7a3d);
+    font-size: 28px;
+    margin: 0 0 20px;
+}
+
+.index-welcome p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Bouton de connexion */
+.btn-connexion {
+    display: inline-block;
+    background-color: var(--vert-ulbo, #0a7a3d);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 28px;
+    margin-top: 20px;
+    border-radius: 7px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-connexion:hover {
+    background-color: var(--vert-fonce, #075c2e);
+}
+
+.btn-connexion:focus-visible {
+    outline: 3px solid #183d68;
+    outline-offset: 3px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+    .index-header {
+        padding: 20px;
+    }
+
+    .index-header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .index-university h1 {
+        font-size: 21px;
+    }
+
+    .index-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .index-menu {
+        justify-content: center;
+    }
+
+    .index-main {
+        padding: 30px 15px;
+    }
+
+    .index-welcome {
+        padding: 30px 20px;
+    }
+
+    .index-welcome h2 {
+        font-size: 23px;
+    }
+}
+
+
+/* ===== PIED DE PAGE ===== */
+.site-footer {
+    background-color: var(--vert-ulbo);
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: auto;
+}
+
+.site-footer p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+
+
+/* ===== ADAPTATION AUX PETITS ECRANS ===== */
+@media (max-width: 600px) {
+    .site-header .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-header h1 { font-size: 21px; }
+    .site-header .menu { justify-content: center; }
+    .accueil-background::before { background-size: 80% auto; }
+    .accueil-content h2 { font-size: 22px; }
+    .connexion-background::before { background-size: 90% auto; }
+}
+
+@media (max-width: 480px) {
+    .connexion-content { padding: 20px; }
+    .connexion-content .header-content { gap: 10px; }
+    .connexion-content .logo-ulbo {
+        width: 50px;
+        height: 50px;
+    }
+    .connexion-content .header-content h1 { font-size: 20px; }
+}
+
+
+
+@media (max-width: 600px) {
+    .connexion-background {
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .connexion-background::before {
+        background-size: 85% auto;
+    }
+}

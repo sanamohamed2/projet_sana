@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion étudiant</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/validation.js" defer> </script>
+</head>
+
+<body>
+
+<main class="connexion-background">
+
+    <div class="connexion-content">
+
+        <div class="header-content">
+            <img src="assets/images/logo-ulbo.jpg" alt="Logo ULBO" class="logo-ulbo">
+
+            <h1>Connexion étudiant</h1>
+        </div>
+
+        <!-- Formulaire sous le titre -->
+        <form id="form-connexion" action="auth.php" method="post">
+
+            <label for="ine">INE</label>
+            <input type="text" id="ine" name="ine" required>
+
+            <p id="erreur-ine" style="color:red;"> </p>
+
+            <label for="mdp">Mot de passe</label>
+            <input type="password" id="mdp" name="mdp" required>
+
+            <p id="erreur-mdp" style="color:red;"> </p>
+
+            <button type="submit"> Se connecter </button>
+
+        </form>
+
+    </div> <!-- Fin connexion-content -->
+
+</main>
+
+<footer class="site-footer">
+    <p> &copy; 2026 Université Lédéa Bernard Ouédraogo (ULBO) </p>
+    <p>Portail étudiant — Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
+
+
