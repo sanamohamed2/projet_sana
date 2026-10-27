@@ -15,11 +15,11 @@ formulaire.addEventListener('submit', function(e) {
 
     // Autoriser admin ou un INE étudiant valide
     const estAdmin = (ine === 'admin');
-    const estEtudiant = (ine.length === 12 && ine.startsWith('N'));
+    const estEtudiant = (ine.length === 11 && ine.startsWith('N'));
 
     if (!estAdmin && !estEtudiant) {
         erreurIne.textContent =
-            "Saisissez 'admin' ou un INE de 12 caractères commençant par N.";
+            "Saisissez 'admin' ou un INE de 11 caractères commençant par N.";
         valide = false;
     } else {
         erreurIne.textContent = '';
