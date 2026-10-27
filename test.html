@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Java Script</title>
+</head>
+<body>
+
+    <h1>Mon serveur fonctionne</h1>
+    
+    <h1 id="titre">Bienvenue</h1>
+    
+<input type="text" id="note1" value="12">
+<input type="text" id="note2" value="15">
+<button onclick="calculer()">Calculer</button>
+<p id="resultat"></p>
+
+<script>
+function calculer() {
+    let a = document.getElementById("note1").value;
+    let b = document.getElementById("note2").value;
+
+    let somme = parseFloat(a) + parseFloat(b);
+
+    document.getElementById("resultat").textContent = somme;
+}
+</script>
+
+</body>
+</html>
+
+
