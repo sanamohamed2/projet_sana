@@ -1,4 +1,4 @@
-# Portail etudiant ULBO (fil rouge)
+_# Portail etudiant ULBO (fil rouge)
 
 Portail web des etudiants de l'Universite Ledea Bernard Ouedraogo :
 connexion, consultation des notes, depot de reclamations.
@@ -48,4 +48,6 @@ database/                      reserve aux scripts SQL
 
 ## Auteurs
 
-- (a completer : noms et prenoms)
+- sana Mohamed
+-savadego Salifou
+-sana Issaka
